@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Fraud Detection</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { background-color: white; padding: 20px; border-radius: 8px; max-width: 800px; margin: auto; }
+        h1 { text-align: center; }
+        input[type=number] {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+        button:hover { background-color: #45a049; }
+        .result { text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Fraud Detection</h1>
+        <form action="/predict" method="post">
+            <!-- Inputs for all 30 features -->
+            <input type="number" name="Time" placeholder="Time" required>
+            <input type="number" name="V1" placeholder="V1" required>
+            <input type="number" name="V2" placeholder="V2" required>
+            <input type="number" name="V3" placeholder="V3" required>
+            <input type="number" name="V4" placeholder="V4" required>
+            <input type="number" name="V5" placeholder="V5" required>
+            <input type="number" name="V6" placeholder="V6" required>
+            <input type="number" name="V7" placeholder="V7" required>
+            <input type="number" name="V8" placeholder="V8" required>
+            <input type="number" name="V9" placeholder="V9" required>
+            <input type="number" name="V10" placeholder="V10" required>
+            <input type="number" name="V11" placeholder="V11" required>
+            <input type="number" name="V12" placeholder="V12" required>
+            <input type="number" name="V13" placeholder="V13" required>
+            <input type="number" name="V14" placeholder="V14" required>
+            <input type="number" name="V15" placeholder="V15" required>
+            <input type="number" name="V16" placeholder="V16" required>
+            <input type="number" name="V17" placeholder="V17" required>
+            <input type="number" name="V18" placeholder="V18" required>
+            <input type="number" name="V19" placeholder="V19" required>
+            <input type="number" name="V20" placeholder="V20" required>
+            <input type="number" name="V21" placeholder="V21" required>
+            <input type="number" name="V22" placeholder="V22" required>
+            <input type="number" name="V23" placeholder="V23" required>
+            <input type="number" name="V24" placeholder="V24" required>
+            <input type="number" name="V25" placeholder="V25" required>
+            <input type="number" name="V26" placeholder="V26" required>
+            <input type="number" name="V27" placeholder="V27" required>
+            <input type="number" name="V28" placeholder="V28" required>
+            <input type="number" name="Amount" placeholder="Amount" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h3>Prediction: {{ prediction }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

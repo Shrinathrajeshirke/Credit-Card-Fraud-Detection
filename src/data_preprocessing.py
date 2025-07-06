@@ -33,6 +33,7 @@ def split_data(df):
     print(f"Train shape: {X_train.shape}, Test shape: {X_test.shape}")
     return X_train, X_test, y_train, y_test
 
+
 if __name__ == "__main__":
     data_path = './data/creditcard.csv'  # Adjust path as needed
     df = load_data(data_path)
@@ -44,3 +45,4 @@ if __name__ == "__main__":
 
     # Handle imbalance on training data only
     X_train_bal, y_train_bal = balance_data(X_train, y_train)
+    print(X_train_bal.columns)
